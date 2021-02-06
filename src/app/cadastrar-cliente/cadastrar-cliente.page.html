@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup">
+    <ion-list lines="full" class="ion-no-margin">
+      <ion-list-header lines="full">
+
+        <ion-label>
+          <img class="logo" src="assets/img/logo3.png" width="310px" height="250px" />
+        </ion-label>
+
+      </ion-list-header>
+      <!-- Lembrar de colocar uma lista suspensa em grupos com dois grupos pré selecionado-->
+      <!--
+      <ion-item>
+        <ion-label position="flixed">Grupo</ion-label>
+        <ion-input type="grupo" placeholder="Escolha o grupo" formControlName="grupo"></ion-input>
+      </ion-item>
+-->
+      <ion-item>
+        <ion-label position="fixed">E-mail:</ion-label>
+        <ion-input type="username" placeholder="Escreva seu E-mail" formControlName="username"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="fixed"> Senha:</ion-label>
+        <ion-input type="password" placeholder="Insira sua Senha" formControlName="password"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="fixed">Nome:</ion-label>
+        <ion-input type="text" placeholder="Escreva sua Nome" formControlName="nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Telefone:</ion-label>
+        <ion-input type="text" placeholder="Digite seu telefone" formControlName="telefone"></ion-input>
+      </ion-item>     
+
+
+
+      <ion-item>
+        <ion-label position="fixed">CPF:</ion-label>
+        <ion-input type="text" placeholder="Escreva sua CPF" formControlName="cpf"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-label position="fixed">CEP:</ion-label>
+        <ion-input type="text" placeholder="Escreva sua CEP" formControlName="cep"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="fixed">Estado:</ion-label>
+        <ion-input type="text" placeholder="Escreva o de sua localizacao Complemento" formControlName="estado">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Cidade:</ion-label>
+        <ion-input type="text" placeholder="Escreva o de sua localizacao Complemento" formControlName="cidade">
+        </ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="fixed">Deficiencia:</ion-label>
+        <ion-input type="text" placeholder="Escreva sua deficiencia" formControlName="deficiencia"></ion-input>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-button class="clienteButton" expand="block" (click)="cadastrarUsers()">Cadastrar</ion-button>
+  </form>
+</ion-content>

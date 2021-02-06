@@ -1,0 +1,99 @@
+<!-- 
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-button (click)="close()">
+      <ion-icon name="close" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>{{ viewTitle }}</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="save()">
+      <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+ 
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Título</ion-label>
+    <ion-input tpye="text" [(ngModel)]="event.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Descrição</ion-label>
+    <ion-input tpye="text" [(ngModel)]="event.desc"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Hora</ion-label>
+    <ion-input tpye="text" [(ngModel)]="event.hora"></ion-input>
+  </ion-item>
+ 
+  <calendar
+    *ngIf="modalReady"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)"
+    lockSwipes="true"
+  >
+  </calendar>
+</ion-content>
+-->
+
+<!--------------------------------------------          SEPARAÇÃO          -------------------------------------------->
+
+<ion-app>
+  
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Agendar</ion-title>
+
+      <ion-buttons slot="start">
+        <ion-button (click)="close()">
+          <ion-icon name="close" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>{{ viewTitle }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="save()">
+          <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+
+    </ion-toolbar>
+  </ion-header>,
+  <ion-content fullscreen>
+    <ion-list>
+      <ion-item>
+        <ion-input tpye="text" [(ngModel)]="event.title" placeholder="Título"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="event.desc" placeholder="Descrição"></ion-input>
+      </ion-item>
+     
+      
+
+
+      <ion-item-divider></ion-item-divider>
+      <ion-item>
+
+       
+
+        <ion-label>Data Inicial</ion-label>
+        <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Horário Inicial</ion-label>
+        <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Final</ion-label>
+        <ion-datetime value="1990-02-20" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+     
+    </ion-list>
+
+
+  </ion-content>
+</ion-app>
+

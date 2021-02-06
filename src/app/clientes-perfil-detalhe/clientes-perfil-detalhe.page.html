@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card id="cards">
+    <img [src]="imagem" *ngIf="imagem" (click)="foto()" />
+
+  </ion-card>
+<!--
+  <ion-button expand="block" (click)="foto()" color="success">
+    <ion-icon name="camera-outline"></ion-icon>
+  </ion-button>
+-->
+  <form [formGroup]="formGroup">
+    <ion-card>
+     
+      <ion-item>
+        <!-- Seleciona o status e salva no firebase-->
+      <ion-label>Status</ion-label>
+      <ion-select  type="text" formControlName="status" interface="action-sheet" (ionChange)="atualizar2()"  >
+        <ion-select-option value="Online">Online</ion-select-option>
+        <ion-select-option value="Offline">Offline</ion-select-option>
+        <ion-select-option value="Ocupado">Ocupado</ion-select-option>
+        
+      </ion-select>
+     <ion-badge  color="primary" >{{cliente.status}}</ion-badge>
+     
+
+  
+    </ion-item>
+
+
+
+      <ion-item>
+        <ion-label>DEFICIÊNCIA:</ion-label>
+        <ion-input readonly="readonly"> {{cliente.deficiencia}} </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>CEP: </ion-label>
+        <ion-input readonly="readonly"> {{cliente.cep}} </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>CPF: </ion-label>
+        <ion-input readonly="readonly"> {{cliente.cpf}} </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>NOME: </ion-label>
+        <ion-input readonly="readonly"> {{cliente.nome}} </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label id="email">E-MAIL:</ion-label>
+        <ion-input readonly="readonly"> {{cliente.username}} </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label id="telefone">TELEFONE:</ion-label>
+        <ion-input readonly="readonly"> {{cliente.telefone}} </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Estado:</ion-label>
+        <ion-input readonly="readonly"> {{cliente.estado}} </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Cidade:</ion-label>
+        <ion-input readonly="readonly"> {{cliente.cidade}} </ion-input>
+      </ion-item>
+
+
+    </ion-card>
+
+  </form><!--
+  <ion-button expand="block" (click)="excluir2()" color="danger">
+    <ion-icon name="trash-outline"></ion-icon>
+  </ion-button>
+-->
+  <ion-button expand="block" (click)="atualizar(cliente)" color="primary">
+    <ion-icon name="clipboard-outline"></ion-icon>
+  </ion-button>
+
+
+</ion-content>

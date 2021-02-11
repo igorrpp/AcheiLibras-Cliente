@@ -52,16 +52,16 @@ export class AppComponent implements OnInit {
     public router: Router,
     private auth: AngularFireAuth,
   ) {
-    // this.initializeApp();
+    this.initializeApp();
   }
-  /*
+  
     initializeApp() {
       this.platform.ready().then(() => {
         this.statusBar.styleDefault();
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('splash');
       });
     }
-  */
+  
  
   ngOnInit() {
     

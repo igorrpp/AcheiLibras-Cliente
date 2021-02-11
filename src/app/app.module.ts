@@ -20,7 +20,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AngularFireAuth} from '@angular/fire/auth';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { NgCalendarModule } from 'ionic2-calendar';
-import { CalModalPageModule } from './pages/cal-modal/cal-modal.module';
+
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { CalModalPageModule } from './pages/cal-modal/cal-modal.module';
     AngularFirestoreModule,
     AngularFireStorageModule,
     NgCalendarModule,
-    CalModalPageModule,
+
     
     
     

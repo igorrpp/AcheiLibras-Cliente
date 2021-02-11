@@ -106,6 +106,18 @@ buscaPerfilPorId(uid: any): Observable<any> { // uid -> authenticator
             let interprete: Interprete = new Interprete();
             interprete.setData(obj.data());// obj.payload.doc.data() -> Dados do interprete
             interprete.id = obj.id; // inserindo ID
+
+           // Aqui irá recarregar as fotos, a cada pesquisa 
+          let ref = this.fireStorage.storage.ref().child(`/interpretes-foto/${ obj.id}.jpg`)
+          ref.getDownloadURL().then(url => {
+
+            interprete.imagem = url;
+
+          }, err => {
+            interprete.imagem = 'assets/img/user.png';
+          })
+
+
             lista.push(interprete); // adicionando o interprete na lista // push é adicionar
           });
           observe.next(lista);
@@ -127,6 +139,17 @@ buscaPerfilPorId(uid: any): Observable<any> { // uid -> authenticator
             let interprete: Interprete = new Interprete();
             interprete.setData(obj.data());// obj.payload.doc.data() -> Dados do cliente
             interprete.id = obj.id; // inserindo ID
+
+            // Aqui irá recarregar as fotos, a cada pesquisa
+          let ref = this.fireStorage.storage.ref().child(`/interpretes-foto/${ obj.id}.jpg`)
+          ref.getDownloadURL().then(url => {
+
+            interprete.imagem = url;
+
+          }, err => {
+            interprete.imagem = 'assets/img/user.png';
+          })
+
             lista.push(interprete); // adicionando o cliente na lista // push é adicionar
           });
           observe.next(lista);

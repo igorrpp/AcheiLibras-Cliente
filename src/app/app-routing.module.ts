@@ -45,12 +45,7 @@ const routes: Routes = [
     path: 'recuperar-senha',
     loadChildren: () => import('./recuperar-senha/recuperar-senha.module').then(m => m.RecuperarSenhaPageModule)
   },
-  {
-    path: 'cal-modal',
-    loadChildren: () => import('./pages/cal-modal/cal-modal.module').then(m => m.CalModalPageModule)
-    , canActivate: [AngularFireAuthGuard],
-    data: { àuthGuardPipe: redirectToLogin }
-  },
+ 
   
    {
     path: 'interpretes-update/:id',
